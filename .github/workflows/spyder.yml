@@ -3,12 +3,11 @@ name: Daily Scraper
 on:
   schedule:
     - cron: '0 0 * * *'  # 每天 UTC 00:00（台灣時間早上 8:00）
-  workflow_dispatch:     # 手動觸發用
+  workflow_dispatch:      # 手動觸發
 
 jobs:
   run-scraper:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -19,8 +18,7 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Run scraper
         run: python static.csv.py
