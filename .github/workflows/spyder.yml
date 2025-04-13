@@ -1,4 +1,5 @@
-name: Daily Scraper
+name: Daily static.csv.py
+
 
 on:
   schedule:
